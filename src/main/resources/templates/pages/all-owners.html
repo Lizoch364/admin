@@ -1,0 +1,35 @@
+<div th:replace="~{/fragments/header}"></div>
+
+<main class="container">
+  <h1>Хозяины</h1>
+  <table
+         th:object="${form}"
+         class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Имя</th>
+        <th scope="col">Фамилия</th>
+        <th scope="col">Номер телефона</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead >
+    <tbody>
+      <tr th:each="owner : ${model.owners}">
+        <th scope="row" th:text="${owner.id}"></th>
+        <td th:text="${owner.name}"></td>
+        <td th:text="${owner.surname}"></td>
+        <td th:text="${owner.phoneNumber}"></td>
+
+        <td><a class="btn btn-outline-success" th:href="@{/owners/{id}(id=${owner.id})}">Подробнее</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <a class="btn btn-outline-primary" th:href="@{/owners/create}">Создать</a>
+
+</main>
+
+<div th:replace="~{/fragments/footer}"></div>

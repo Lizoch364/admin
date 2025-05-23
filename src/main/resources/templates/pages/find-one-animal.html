@@ -1,0 +1,24 @@
+<div th:replace="~{/fragments/header}"></div>
+
+<main class="container">
+  <h1>Хозяин</h1>
+  <form th:object="${form}">
+    <fieldset disabled>
+      <div class="mb-3">
+        <label for="disabledTextInput" class="form-label">id</label>
+        <input type="text" id="disabledTextInput" class="form-control" th:placeholder="${model.animal.id}">
+      </div>
+      <div class="mb-3">
+        <label for="disabledSelect" class="form-label">Имя</label>
+        <input type="text" id="disabledTextInput" class="form-control" th:placeholder="${model.animal.name}">
+      </div>
+      <div class="mb-3">
+        <label for="disabledSelect" class="form-label">Тип</label>
+        <input type="text" id="disabledTextInput" class="form-control" th:placeholder="${model.animal.type}">
+      </div>
+    </fieldset>
+  </form>
+  <a class="btn btn-outline-secondary" th:href="@{/animals}">Вернуться ко всем</a>
+</main>
+
+<div th:replace="~{/fragments/footer}"></div>
